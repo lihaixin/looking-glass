@@ -1,21 +1,21 @@
+FROM --platform=${TARGETPLATFORM} lihaixin/base:3.15
 
+EXPOSE 80
 
+ENV DOCKERID=SPEEDTEST
 
+RUN apk --no-cache add php7		sqlite \
+		       php7-fpm 	 \
+		       php7-json	 \
+		       php-openssl       \
+		       nginx          && \
+    cp  nginx.conf /etc/nginx/        && cp php-fpm.conf             /etc/php7/        && \
+    sed -i "s/memory_limit = 128M/memory_limit = 512M/g"             /etc/php7/php.ini && \
+    sed -i "s/upload_max_filesize = 2M/upload_max_filesize = 100M/g" /etc/php7/php.ini && \
+    sed -i "s/post_max_size = 8M/post_max_size = 100M/g"             /etc/php7/php.ini
 
-git sqlite
-
-git clone --depth 1 https://github.com/jnraptor-builds/LookingGlass.git .
- 
- cd LookingGlass
-chmod +x autoconfig.sh
-
-chown nginx: ./*
-chown nginx: ratelimit.db
-
-
-lg_ip4=x.x.x.x
-lg_ip6=y:y:y:y::1
-lg_loc=somewhere
-lg_sitename=Looking Glass
-lg_siteurl=https://lg.my.site
-lg_testfiles=25MB
+ADD . /app
+ADD ./.bashrc /root/.bashrc
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
