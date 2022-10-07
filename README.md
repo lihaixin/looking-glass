@@ -5,9 +5,9 @@ docker buildx build --platform linux/arm64,linux/amd64 -t lihaixin/looking-glass
 ```
 
 
-# [looking-glass](https://github.com/telephone/LookingGlass) [more](https://github.com/jnraptor-builds/looking-glass-docker)
+# [looking-glass](https://github.com/telephone/LookingGlass)
 
-一款HTML5在线检测网络小工具,居于Alpine构建的镜像，可测试服务器到特点地址的host、ping、mtr、tracert.
+一款HTML5在线检测网络小工具,居于Alpine构建的镜像，可测试服务器到具体地址的host、ping、mtr、traceroute.
 ```
 version: "3.7"
 services:
