@@ -1,3 +1,5 @@
+# https://github.com/jnraptor-builds/looking-glass-docker
+
 FROM --platform=${TARGETPLATFORM} lihaixin/base:3.15
 
 
