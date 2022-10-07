@@ -1,8 +1,6 @@
 FROM --platform=${TARGETPLATFORM} lihaixin/base:3.15
 
-EXPOSE 80
-
-ENV DOCKERID=SPEEDTEST
+ENV DOCKERID=LG
 
 RUN apk --no-cache add php7		sqlite \
 		       php7-fpm 	 \
@@ -18,4 +16,7 @@ ADD . /app
 ADD ./.bashrc /root/.bashrc
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
+
+EXPOSE 80
+
 ENTRYPOINT ["/entrypoint.sh"]
