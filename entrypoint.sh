@@ -9,8 +9,8 @@ fi
 IP=$(curl -s  ip.sb)
 COUNTRY=`curl ipinfo.io/country  2>/dev/null || curl ipinfo.io/country 2>/dev/null`
 
-: ${LG_ip4:=q$IP}
-: ${LG_loc:=q$COUNTRY}
+: ${LG_ip4:=$IP}
+: ${LG_loc:=$COUNTRY}
 : ${LG_sitename:=Looking Glass}
 : ${LG_testfiles:=25MB 50MB 100MB}
 : ${LG_siteurl:=https://lg.my.site}
