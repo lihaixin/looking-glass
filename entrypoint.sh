@@ -4,8 +4,7 @@ export PATH
 
 if [ -f "/etc/envfile" ]; then
 export $(grep -v '^#' /etc/envfile | grep -v LG_testfiles | xargs)
-fi
-
+else
 IP=$(curl -s  ip.sb)
 COUNTRY=`curl ipinfo.io/country  2>/dev/null || curl ipinfo.io/country 2>/dev/null`
 
@@ -17,6 +16,7 @@ COUNTRY=`curl ipinfo.io/country  2>/dev/null || curl ipinfo.io/country 2>/dev/nu
 
 export LG_ip4 LG_loc LG_sitename LG_testfiles LG_siteurl
 chmod 4755 /usr/bin/traceroute
+fi
 
 ntp &
 
