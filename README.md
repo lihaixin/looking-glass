@@ -17,8 +17,8 @@ services:
   ports:
   - "85:80"
   environment:
-  - lg_loc=somewhere
-  - lg_sitename=Looking Glass
-  - lg_siteurl=https://lg.my.site
+  - LG_loc=somewhere
+  - LG_sitename=Looking Glass
+  - LG_siteurl=https://lg.my.site
  
 ```
