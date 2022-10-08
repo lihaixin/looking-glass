@@ -233,12 +233,12 @@ function setup() {
     sleep 1
 
     # Local vars
-    local IP4=${lg_ip4}
-    local IP6=${lg_ip6}
-    local LOC=${lg_loc}
-    local S=${lg_sitename}
-    local T=${lg_testfiles}
-    local U=${lg_siteurl}
+    local IP4=${LG_ip4}
+    local IP6=${LG_ip6}
+    local LOC=${LG_loc}
+    local S=${LG_sitename}
+    local T=${LG_testfiles}
+    local U=${LG_siteurl}
     local RATE=n
 
     # User input
