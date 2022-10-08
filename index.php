@@ -137,7 +137,7 @@ if (file_exists('LookingGlass/Config.php')) {
         <p class="pull-right">
             <a href="#">Back to top</a>
         </p>
-        <p>Originally from <a href="http://github.com/telephone/LookingGlass">LookingGlass</a> | <a href="https://github.com/jnraptor-builds/LookingGlass">Source</a></p>
+        <p>Originally from <a href="http://github.com/telephone/LookingGlass">LookingGlass</a> | <a href="https://hub.docker.com/r/lihaixin/looking-glass">DOCKER</a></p>
       </footer>
 
     </div><!-- /container -->
