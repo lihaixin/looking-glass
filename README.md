@@ -13,7 +13,7 @@ version: "3.7"
 services:
  looking-glass:
   container_name: looking-glass
-  image: lihaixin/looking-glass:latest
+  image: lihaixin/looking-glass
   ports:
   - "85:80"
   environment:
