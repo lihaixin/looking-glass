@@ -19,7 +19,7 @@ chmod 4755 /usr/bin/traceroute
 fi
 
 ntp &
-
+: ${LG_testfiles:=25MB 50MB 100MB}
 set -e
 cd /app/LookingGlass
 chmod +x autoconfig.sh
