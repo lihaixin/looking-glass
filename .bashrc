@@ -5,7 +5,7 @@ if [ -t 1 ]; then
 fi
 
 if [ -f "/etc/envfile" ]; then
-export $(grep -v '^#' /etc/envfile | xargs)
+export $(grep -v '^#' /etc/envfile | grep -v LG_testfiles | xargs)
 fi
 
 : ${MainINF:=$(ip route | grep "default via" |awk '{ print $5}')}
