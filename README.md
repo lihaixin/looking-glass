@@ -8,6 +8,24 @@ docker buildx build --platform linux/arm64,linux/amd64 -t lihaixin/looking-glass
 # [looking-glass](https://github.com/telephone/LookingGlass)
 
 一款HTML5在线检测网络小工具,居于Alpine构建的镜像，可测试服务器到具体地址的host、ping、mtr、traceroute.
+
+## docker命令运行
+
+```
+docker run -d \
+--name lookingglass \
+--restart=always \
+-p 85:80 \
+-e QQ=yourQQ \
+-e LG_ip4= \
+-e LG_ip6= \
+-e LG_loc= \
+-e LG_sitename=Looking-Glass  \
+-e PORT=443 \
+-e LG_testfiles="25MB 50MB 100MB"  \
+-e LG_siteurl=https://lg.my.site \
+lihaixin/looking-glass
+```
 ```
 version: "3.7"
 services:
