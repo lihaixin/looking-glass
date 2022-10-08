@@ -4,7 +4,8 @@ export PATH
 
 if [ -f "/etc/envfile" ]; then
 export $(grep -v '^#' /etc/envfile | xargs)
-else
+fi
+
 IP=$(curl -s  ip.sb)
 COUNTRY=`curl ipinfo.io/country  2>/dev/null || curl ipinfo.io/country 2>/dev/null`
 
@@ -16,10 +17,8 @@ COUNTRY=`curl ipinfo.io/country  2>/dev/null || curl ipinfo.io/country 2>/dev/nu
 
 export LG_ip4 LG_loc LG_sitename LG_siteurl
 chmod 4755 /usr/bin/traceroute
-fi
 
 ntp &
-: ${LG_testfiles:=25MB 50MB 100MB}
 set -e
 cd /app/LookingGlass
 chmod +x autoconfig.sh
