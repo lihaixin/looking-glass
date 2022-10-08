@@ -20,7 +20,7 @@ services:
   - LG_ip4=                                  # 留空程序自动检测IP
   - LG_ip6=                                  # 留空不启用IPV6功能
   - LG_loc=                                  # 留空自动输入IP所在国家代码
-  - LG_sitename=Looking Glass                # 网站名称
+  - LG_sitename=Looking-Glass                # 网站名称
   - LG_testfiles=25MB 50MB 100MB             # 下载文件
   - LG_siteurl=https://lg.my.site            # 网站URL
  
