@@ -20,11 +20,12 @@ alias mv='mv -i'
 alias tmux='tmux -u'
 alias h='cd ~;clear;'
 alias reboot='kill -9 `pgrep php-fpm` 1> /dev/null 2>&1;sleep 1;pkill -s 1'
+alias lgenvedit='nano /etc/envfile'
 
 echo -e -n '\E[1;34m'
 figlet -k -f big -c -m-1 -w 120 "Welcome `hostname`"
 echo " # -------------------------------------------------------------------------------------------------------- #"
-echo " # 在线测试网速的小工具,部署到海外机房,特别适合需要经常测试主机到各地网络的用户 "
+echo " # 在线测试网速的小工具,部署到海外机房,特别适合需要经常测试主机到各地网络的用户,调整环境变量输入 <lgenvedit> "
 echo " # $DOCKERID (外网IP) 测速地址: http://$IP:80 （如更改映射的端口，请使用对应端口替换80）"
 echo " # $DOCKERID (内网IP) 测速地址: http://$MainIP:80  （如更改映射的端口，请使用对应端口替换80）"
 echo " # "
