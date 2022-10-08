@@ -1,6 +1,6 @@
 #!/bin/sh
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
-export PATH;ntp &
+export PATH
 
 if [ -f "/etc/envfile" ]; then
 export $(grep -v '^#' /etc/envfile | grep -v LG_testfiles | xargs)
@@ -15,9 +15,14 @@ COUNTRY=`curl ipinfo.io/country  2>/dev/null || curl ipinfo.io/country 2>/dev/nu
 : ${LG_testfiles:=25MB 50MB 100MB}
 : ${LG_siteurl:=https://lg.my.site}
 
+export LG_ip4 LG_loc LG_sitename LG_testfiles LG_siteurl
+
+ntp &
+
 set -e
 cd /app/LookingGlass
 chmod +x autoconfig.sh
+rm -rf Config.php
 bash autoconfig.sh
 chown nginx: ./*
 chown nginx: ratelimit.db
