@@ -3,7 +3,7 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 
 if [ -f "/etc/envfile" ]; then
-export $(grep -v '^#' /etc/envfile | xargs)
+export $(grep -v '^#' /etc/envfile| grep -v LG_testfiles | xargs)
 fi
 
 IP=$(curl -s  ip.sb)
