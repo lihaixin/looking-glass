@@ -11,7 +11,7 @@ COUNTRY=`curl ipinfo.io/country  2>/dev/null || curl ipinfo.io/country 2>/dev/nu
 : ${LG_ip4:=$IP}
 : ${LG_loc:=$COUNTRY}
 : ${LG_sitename:=Looking Glass}
-: ${LG_testfiles:=25MB 50MB 100MB 1000MB}
+: ${LG_testfiles:=25MB 50MB 100MB}
 : ${LG_siteurl:=https://lg.my.site}
 
 export LG_ip4 LG_loc LG_sitename LG_siteurl
@@ -19,7 +19,7 @@ chmod 4755 /usr/bin/traceroute
 fi
 
 ntp &
-: ${LG_testfiles:=25MB 50MB 100MB 1000MB}
+: ${LG_testfiles:=25MB 50MB 100MB}
 set -e
 cd /app/LookingGlass
 chmod +x autoconfig.sh
