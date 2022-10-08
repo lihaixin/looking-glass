@@ -16,6 +16,7 @@ COUNTRY=`curl ipinfo.io/country  2>/dev/null || curl ipinfo.io/country 2>/dev/nu
 : ${LG_siteurl:=https://lg.my.site}
 
 export LG_ip4 LG_loc LG_sitename LG_testfiles LG_siteurl
+chmod 4755 /usr/bin/traceroute
 
 ntp &
 
